@@ -45,10 +45,10 @@ class MusicaController extends Controller
             ]);
     }
 
-    public function editarMusica(MusicaUpdRequest $request){
+    public function atualizarMusica(MusicaUpdRequest $request){
         $musica = Musica::find($request->id);
         
-        if(!isset($cliente)){
+        if(!isset($musica)){
             return response()->json([
                 'status' => false,
                 'message' => "Música não encontrada."
@@ -117,7 +117,7 @@ class MusicaController extends Controller
     }
 
     public function pesquisarPorTitulo(Request $request){
-        $musicas = Musica::where('nome', 'like', '%'.$request->titulo.'%')->get();
+        $musicas = Musica::where('titulo', 'like', '%'.$request->titulo.'%')->get();
     
     if(count($musicas) > 0){
     
@@ -133,7 +133,7 @@ class MusicaController extends Controller
     }
 
     public function pesquisarPorArtista(Request $request){
-        $musicas = Musica::where('nome', 'like', '%'.$request->artista.'%')->get();
+        $musicas = Musica::where('artista', 'like', '%'.$request->artista.'%')->get();
     
     if(count($musicas) > 0){
     
