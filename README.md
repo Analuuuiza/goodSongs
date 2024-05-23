@@ -21,6 +21,14 @@ copy .env.example .env
 ```
 code .
 ```
+6. iniciar a migrate
+```
+php artisan migrate
+```
+7. ativar o servidor
+```
+php artisan serve --host 10.137.11.222
+```
 
 
 ## License
