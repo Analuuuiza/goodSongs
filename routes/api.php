@@ -11,7 +11,7 @@ Route::post('musica/cadastroMusica',
 Route::delete('musica/excluirMusica/{id}',
 [MusicaController::class, 'excluirMusica']);
 
-Route::put('musica/atualizarMusica/${id}',
+Route::put('musica/atualizarMusica',
 [MusicaController::class, 'atualizarMusica']);
 
 Route::get('musica/retornarTodasMusicas',
@@ -20,7 +20,7 @@ Route::get('musica/retornarTodasMusicas',
 Route::get('musica/find/{id}',
 [MusicaController::class, 'pesquisarPorId']);
 
-Route::get('musica/pesquisarPorTitulo',
+Route::post('musica/pesquisarPorTitulo',
 [MusicaController::class, 'pesquisarPorTitulo']);
 
 Route::get('musica/pesquisarPorArtista',
